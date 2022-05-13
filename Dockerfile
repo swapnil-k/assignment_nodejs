@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY ./ ./
 
-ENV TIMEOUT 10
+ENV TIMEOUT 3600
 RUN npm install
 EXPOSE 80
 CMD ["node" , "index.js"]
