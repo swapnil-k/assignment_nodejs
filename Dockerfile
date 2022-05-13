@@ -2,8 +2,9 @@ FROM node:14.19-alpine
 
 ENV NODE_ENV production
 
-COPY .. /opt/app
-WORKDIR /opt/app
+WORKDIR /app
+
+COPY ./ ./
 
 ENV TIMEOUT 10
 RUN npm install
