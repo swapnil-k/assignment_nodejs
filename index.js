@@ -15,12 +15,18 @@ const { MongoClient } = require("mongodb");
 const { url } = require('inspector');
 var host = ''
 var database;
+
+const cors = require('cors');
+app.use(cors({
+    origin: 'https://angularcatofthehour.s3.ap-south-1.amazonaws.com'
+}));
+
 client.on('connect', function () {
     console.log('Connected!....'); // Connected!
 });
 app.get('/api/get-image', async (req, res) => {
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://angularcatofthehour.s3.ap-south-1.amazonaws.com');
+//    res.setHeader('Access-Control-Allow-Origin', 'https://angularcatofthehour.s3.ap-south-1.amazonaws.com');
 
     try {
         const response = await client.get(`image`)
